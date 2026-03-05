@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.1.24-3"
+  },
+  "auth": {
+    "profiles": {
+      "anthropic:default": {
+        "provider": "anthropic",
+        "mode": "api_key"
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "models": {
+        "anthropic/claude-sonnet-4-5": {
+          "alias": "sonnet",
+          "params": {
+            "cacheControlTtl": "1h"
+          }
+        },
+        "anthropic/claude-opus-4-5": {
+          "alias": "opus",
+          "params": {
+            "cacheControlTtl": "1h"
+          }
+        }
+      },
+      "workspace": "/data/workspace",
+      "contextPruning": {
+        "mode": "cache-ttl",
+        "ttl": "1h"
+      },
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "heartbeat": {
+        "every": "30m"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    },
+    "list": [
+      { "id": "main" },
+      {
+        "id": "loki",
+        "name": "loki",
+        "workspace": "/data/workspace/agents/loki"
+      },
+      {
+        "id": "fury",
+        "name": "fury",
+        "workspace": "/data/workspace/agents/fury"
+      },
+      {
+        "id": "vision",
+        "name": "vision",
+        "workspace": "/data/workspace/agents/vision"
+      }
+    ]
+  },
+  "tools": {
+    "web": {
+      "search": {
+        "apiKey": "${WEB_SEARCH_API_KEY}"
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions",
+    "tts": {
+      "auto": "always",
+      "provider": "elevenlabs",
+      "elevenlabs": {
+        "apiKey": "${ELEVENLABS_API_KEY}"
+      }
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+  "channels": {
+    "whatsapp": {
+      "dmPolicy": "open",
+      "allowFrom": ["*"],
+      "groupPolicy": "allowlist",
+      "mediaMaxMb": 50,
+      "debounceMs": 0
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "all",
+    "auth": {
+      "mode": "token",
+      "token": "${GATEWAY_AUTH_TOKEN}"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "plugins": {
+    "entries": {
+      "whatsapp": {
+        "enabled": true
+      }
+    }
+  }
+}

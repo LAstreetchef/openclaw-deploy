@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: openclaw-gateway
+    runtime: docker
+    region: oregon
+    plan: free
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: ELEVENLABS_API_KEY
+        sync: false
+      - key: WEB_SEARCH_API_KEY
+        sync: false
+      - key: GATEWAY_AUTH_TOKEN
+        sync: false
+    disk:
+      name: openclaw-data
+      mountPath: /data
+      sizeGB: 1
