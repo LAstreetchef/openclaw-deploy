@@ -5,7 +5,7 @@ cat > /root/.clawdbot/clawdbot.json << 'CONF'
   "gateway": {
     "port": 10000,
     "mode": "local",
-    "bind": "all",
+    "bind": "lan",
     "trustedProxies": ["10.0.0.0/8"],
     "auth": {
       "mode": "token",
