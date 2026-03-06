@@ -1,6 +1,17 @@
 #!/bin/sh
-mkdir -p /root/.clawdbot
-cp /tmp/clawdbot-template.json /root/.clawdbot/clawdbot.json
-echo "Config written:"
-cat /root/.clawdbot/clawdbot.json | grep -A2 "trustedProxies"
+mkdir -p /home/node/.clawdbot
+cat > /home/node/.clawdbot/clawdbot.json << 'CONF'
+{
+  "gateway": {
+    "port": 10000,
+    "mode": "local",
+    "bind": "lan",
+    "trustedProxies": ["10.0.0.0/8"],
+    "auth": {
+      "mode": "token",
+      "token": "88e8de06118f2f1cabb8442b04d0b39ee6dc24bf3c301ac0"
+    }
+  }
+}
+CONF
 exec clawdbot gateway --allow-unconfigured
