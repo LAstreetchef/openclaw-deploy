@@ -2,6 +2,10 @@
 mkdir -p /root/.clawdbot
 cat > /root/.clawdbot/clawdbot.json << 'CONF'
 {
+  "meta": {
+    "lastTouchedVersion": "2026.1.24-3",
+    "lastTouchedAt": "2026-03-06T00:00:00.000Z"
+  },
   "gateway": {
     "port": 10000,
     "mode": "local",
