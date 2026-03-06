@@ -93,7 +93,7 @@
   },
   "gateway": {
     "port": 10000,
-    "mode": "remote",
+    "mode": "local",
     "bind": "lan",
     "auth": {
       "mode": "token",

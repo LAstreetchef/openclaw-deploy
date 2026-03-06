@@ -10,4 +10,4 @@ COPY clawdbot.json /root/.clawdbot/clawdbot.json
 
 EXPOSE 18789
 
-CMD ["clawdbot", "gateway"]
+CMD ["clawdbot", "gateway", "--allow-unconfigured"]
