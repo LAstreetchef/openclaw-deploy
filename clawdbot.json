@@ -43,7 +43,9 @@
       }
     },
     "list": [
-      { "id": "main" },
+      {
+        "id": "main"
+      },
       {
         "id": "loki",
         "name": "loki",
@@ -85,7 +87,9 @@
   "channels": {
     "whatsapp": {
       "dmPolicy": "open",
-      "allowFrom": ["*"],
+      "allowFrom": [
+        "*"
+      ],
       "groupPolicy": "allowlist",
       "mediaMaxMb": 50,
       "debounceMs": 0
@@ -95,10 +99,12 @@
     "port": 10000,
     "mode": "local",
     "bind": "lan",
-    "trustedProxies": ["10.0.0.0/8"],
+    "trustedProxies": [
+      "10.0.0.0/8"
+    ],
     "auth": {
       "mode": "token",
-      "token": "${GATEWAY_AUTH_TOKEN}"
+      "token": "88e8de06118f2f1cabb8442b04d0b39ee6dc24bf3c301ac0"
     },
     "tailscale": {
       "mode": "off",
