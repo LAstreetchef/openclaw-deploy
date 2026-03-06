@@ -95,6 +95,7 @@
     "port": 10000,
     "mode": "local",
     "bind": "lan",
+    "trustedProxies": ["10.0.0.0/8"],
     "auth": {
       "mode": "token",
       "token": "${GATEWAY_AUTH_TOKEN}"
