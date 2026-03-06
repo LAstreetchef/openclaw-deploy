@@ -1,6 +1,6 @@
 #!/bin/sh
-mkdir -p /home/node/.clawdbot
-cat > /home/node/.clawdbot/clawdbot.json << 'CONF'
+mkdir -p /root/.clawdbot
+cat > /root/.clawdbot/clawdbot.json << 'CONF'
 {
   "gateway": {
     "port": 10000,
@@ -14,6 +14,6 @@ cat > /home/node/.clawdbot/clawdbot.json << 'CONF'
   }
 }
 CONF
-export HOME=/home/node
-export XDG_CONFIG_HOME=/home/node/.clawdbot
+echo "=== CONFIG ==="
+cat /root/.clawdbot/clawdbot.json
 exec clawdbot gateway --allow-unconfigured
