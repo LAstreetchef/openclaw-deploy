@@ -92,7 +92,7 @@
     }
   },
   "gateway": {
-    "port": 18789,
+    "port": 10000,
     "mode": "local",
     "bind": "lan",
     "auth": {
