@@ -15,10 +15,6 @@ cat > /root/.clawdbot/clawdbot.json << 'CONF'
   }
 }
 CONF
-clawdbot gateway --port 10001 --allow-unconfigured --force &
-until nc -z 127.0.0.1 10001; do
-  echo "Waiting for gateway..."
-  sleep 1
-done
-echo "Gateway ready. Starting nginx."
-exec nginx -g "daemon off;"
+echo "=== Launching gateway ==="
+clawdbot gateway --port 10001 --allow-unconfigured --force
+echo "=== Gateway exited with code $? ==="
