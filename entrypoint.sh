@@ -15,7 +15,7 @@ cat > /root/.clawdbot/clawdbot.json << 'CONF'
   }
 }
 CONF
-clawdbot gateway --port 10001 --allow-unconfigured &
+clawdbot gateway --port 10001 --allow-unconfigured --force &
 until nc -z 127.0.0.1 10001; do
   echo "Waiting for gateway..."
   sleep 1
