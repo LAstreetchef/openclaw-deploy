@@ -10,6 +10,9 @@ cat > /root/.clawdbot/clawdbot.json << 'CONF'
     "auth": {
       "mode": "token",
       "token": "88e8de06118f2f1cabb8442b04d0b39ee6dc24bf3c301ac0"
+    },
+    "controlUi": {
+      "dangerouslyAllowHostHeaderOriginFallback": true
     }
   }
 }
