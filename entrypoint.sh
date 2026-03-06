@@ -14,4 +14,6 @@ cat > /home/node/.clawdbot/clawdbot.json << 'CONF'
   }
 }
 CONF
+export HOME=/home/node
+export XDG_CONFIG_HOME=/home/node/.clawdbot
 exec clawdbot gateway --allow-unconfigured
